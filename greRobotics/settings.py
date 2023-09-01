@@ -34,6 +34,7 @@ AUTHENTICATION_BACKENDS = (
 )
 
 SITE_ID = 1
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -90,8 +91,8 @@ TEMPLATES = [
 SOCIALACCOUNT_PROVIDERS = {
     'google':{
         'APP': {
-            'client_id': '123',
-            'secret': '456',
+            'client_id': '88eda0b1e6d004794113',
+            'secret': '0f22fc7985bd273d0f872ad4d4df3270afbf7b42',
             'key': ''
         }
     }
