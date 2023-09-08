@@ -4,7 +4,7 @@ from django.urls import reverse
 from datetime import datetime, date
 # Create your models here.
 
-class GREROBOTICSMODEL (models.Model):
+class GreRoboticsModel (models.Model):
     title = models.CharField (max_length=500)
     content = models.TextField ()
     slug = models.SlugField (max_length=200)
