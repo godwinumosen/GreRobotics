@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Update Post... {% endblock %}
+
+{% block content %}
+
+<main id="main">
+  <!-- ======= Blog Section ======= -->
+  <div id="blog" class="blog-area">
+   <div class="blog-inner area-padding">
+     <div class="blog-overly"></div>
+     <div class="container ">
+       <div class="row">
+         <div class="col-md-12 col-sm-12 col-xs-12">
+           <div class="section-headline text-center">
+             <h4>Add Post</h4>
+           </div>
+         </div>
+       </div>
+
+       <div class="form-group">
+          <form method= "POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-secondary"> Post </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- ======= Testimonials Section ======= -->
+    <div id="testimonials" class="testimonials">
+        <div class="container">
+  
+          <div class="testimonials-slider swiper">
+            <div class="swiper-wrapper">
+  
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <img src="{% static 'img/testimonials/testimonials-1.jpg'%}" class="testimonial-img" alt="">
+                  <h3>Idowu</h3>
+                  <h4>Coo &amp; Founder</h4>
+                  <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    Proin iaculis purus consequantumsus at semper.
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  </p>
+                </div>
+              </div><!-- End testimonial item -->
+  
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+      
+  {% endblock %}

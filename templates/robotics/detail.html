@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Details Description {% endblock %}
+
+{% block content %}
+<div class="text-center">
+  <div class="spinner-border" role="status">
+    <span class="sr-only">Gre</span>
+  </div>
+</div>
+
+<main id="main">
+  <!-- ======= Blog Section ======= -->
+  <div id="blog" class="blog-area">
+   <div class="blog-inner area-padding">
+     <div class="blog-overly"></div>
+     <div class="container ">
+       <div class="row">
+         <div class="col-md-12 col-sm-12 col-xs-12">
+           <div class="section-headline text-center">
+             <h4>{{ object.title }}</h4>
+             <h6> <small>Posted by: {{object.author}}</small></h6>
+           </div>
+         </div>
+       </div>
+
+       <div class="row">
+        <div class="col-md-8 col-sm-8 col-xs-12">
+          <div class="single-blog">
+            {% if object.img %}s
+            <div class="single-blog-img"> <img src="{{ object.img.url }}" alt=""></div>
+            {% endif %}
+            <div class="blog-text">
+              <h4>{{ object.title }}</a></h4>
+              <p>{{ object.content|truncatechars:9000 }}</p>
+            </div>
+            <span>
+              <a href="{% url 'home' %}" class="btn btn-secondary"><i class="fa fa-angle-left">Back</i></a> <small>Posted: </small> {{ object.publish_date }}
+              <a href="{% url 'update_post' object.pk %} "> Edit</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+  {% endblock %}
