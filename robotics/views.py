@@ -3,7 +3,8 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from .models import GreRoboticsModel
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .forms import GreRoboticsForms
+from .forms import GreRoboticsForms, EditGreRoboticsForms
+from django.urls import reverse_lazy
 # Create your views here.
 
 
@@ -26,33 +27,40 @@ class ArticleDetailView (DetailView):
         object = get_object_or_404(GreRoboticsModel, pk=pk)
         return render(request, 'detail.html', {'detail': object})
     
-
 class AddPostView (CreateView):
     model = GreRoboticsModel
     form_class = GreRoboticsForms
     template_name = 'robotics/add_post.html'  
     #fields = ('title', 'content', 'slug', 'author',)
     
-    
 class UpdatePostView (UpdateView):
     model = GreRoboticsModel
+    form_class = EditGreRoboticsForms
     template_name = 'robotics/update_post.html'
-    fields = ('title', 'content', 'slug',)
+    #fields = ('title', 'content', 'slug',)
 
-
+class DeletePostview (DeleteView):
+    model = GreRoboticsModel
+    template_name = 'robotics/delete_post.html' 
+    success_url = reverse_lazy ('home')
+    
 
 #contact
 def contact (request):
-    email='umosengodwin568@gmail.com'
+    email='grerobotics@gmail.com'
     if request.method == 'POST':
         message_name = request.POST['message-name']
         message_email = request.POST['message-email']
         message = request.POST['message']
         
         messages.success(request, f'Your email was sent Successfully we will get back to you {message_name}..!')
-        return redirect('/index')
+        return redirect('/home')
     else:
         context={
             'email':email
         }
         return render(request, 'robotics/contact.html',context)
+    
+def about (request):
+    
+    return render (request, 'robotics/about.html',{})

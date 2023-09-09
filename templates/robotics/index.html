@@ -3,25 +3,15 @@
 
 {% block content %}
 
-<div class="content">
-  {% if messages %}
-<ul class="messages">
-  {% for message in messages %}
-      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-  {% endfor %}
-</ul>
-{% endif %}
-
  <!-- ======= hero Section ======= -->
  <section id="hero">
   <div class="hero-container">
     <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
-      
       <div class="carousel-inner" role="listbox">
         <div class="carousel-item active" style="background-image: url({% static 'img/national-cancer.jpg' %})">
           <div class="carousel-container">
             <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">We Build, We Test, We Impact </h2>
+              <h2 class="animate__animated animate__fadeInDown">We Build, We Test We Impact </h2>
               <p class="animate__animated animate__fadeInUp">Learn to Take on Challenging Adventures</p>
             </div>
           </div>
@@ -41,6 +31,14 @@
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="section-headline text-center">
+                <div class="content">
+                  {% if messages %}
+                <ul class="messages">
+                  {% for message in messages %}
+                      <h4><li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li></h4>
+                  {% endfor %}
+                </ul>
+                {% endif %}
                 <h2>Latest News</h2>
               </div>
             </div>
@@ -240,12 +238,12 @@
     <div class="reviews-area">
       <div class="row g-0">
         <div class="col-lg-6">
-          <a href="{% url 'contact' %}"><img src="{% static 'img/about/2.jpg'%}" alt="" class="img-fluid"></a>
+          <a href="{% url 'contact' %}"><img src="{% static 'img/about/ma.jpg'%}" alt="" class="img-fluid"></a>
         </div>
         <div class="col-lg-6 work-right-text d-flex align-items-center">
           <div class="px-5 py-5 py-lg-0">
-            <h2>working with us</h2>
-            <h5>Web Design, Ready Home, Construction and Co-operate Outstanding Buildings.</h5>
+            <h2>Working with GreRobotics Software and Engineering</h2>
+            <h5>We Build, We Test, We Impact..</h5>
             <a href="{% url 'contact' %}" class="ready-btn scrollto">Contact us</a>
           </div>
         </div>

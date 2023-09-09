@@ -1,11 +1,16 @@
+{% extends 'base.html' %}
 {% load static %}
+{% block title %} About page... {% endblock %}
+
+{% block content %}
+
 <!-- ======= About Section ======= -->
     <div id="about" class="about-area area-padding">
         <div class="container">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="section-headline text-center">
-                <h2>About eBusiness</h2>
+                <h2>About GreRobotics</h2>
               </div>
             </div>
           </div>
@@ -14,8 +19,8 @@
             <div class="col-md-6 col-sm-6 col-xs-12">
               <div class="well-left">
                 <div class="single-well">
-                  <a href="#">
-                    <img src="{% static 'img/about/1.jpg '%}" alt="">
+                  <a href="https://www.linkedin.com/feed/update/urn:li:activity:7096891733828907008/">
+                    <img src="{% static 'img/about/national-cancer.jpg '%}" alt="">
                   </a>
                 </div>
               </div>
@@ -24,27 +29,27 @@
             <div class="col-md-6 col-sm-6 col-xs-12">
               <div class="well-middle">
                 <div class="single-well">
-                  <a href="#">
-                    <h4 class="sec-head">project Maintenance</h4>
+                  <a href="https://www.linkedin.com/feed/update/urn:li:activity:7096891733828907008/">
+                    <h4 class="sec-head">ROBOTICS SOFTWARE AND ENGINEERING</h4>
                   </a>
                   <p>
-                    Redug Lagre dolor sit amet, consectetur adipisicing elit. Itaque quas officiis iure aspernatur sit adipisci quaerat unde at nequeRedug Lagre dolor sit amet, consectetur adipisicing elit. Itaque quas officiis iure
+                    Robots are the future, and our company is helping to make that future a reality. 🤖 We're developing innovative robotics solutions that will change the way people work, live, and play. 💪 Our robots are designed to be efficient, effective, and user-friendly, and we're committed to making them the best in the world. 🌎 With our robots, the possibilities are endless - the only limit is your imagination! 💡
                   </p>
                   <ul>
                     <li>
-                      <i class="bi bi-check"></i> Interior design Package
+                      <i class="bi bi-check"></i> Engineering
                     </li>
                     <li>
-                      <i class="bi bi-check"></i> Building House
+                      <i class="bi bi-check"></i> Job opportunity
                     </li>
                     <li>
-                      <i class="bi bi-check"></i> Reparing of Residentail Roof
+                      <i class="bi bi-check"></i>  3D Modeling
                     </li>
                     <li>
-                      <i class="bi bi-check"></i> Renovaion of Commercial Office
+                      <i class="bi bi-check"></i>  Robot development system
                     </li>
                     <li>
-                      <i class="bi bi-check"></i> Make Quality Products
+                      <i class="bi bi-check"></i> Industrial machines
                     </li>
                   </ul>
                 </div>
@@ -54,4 +59,69 @@
           </div>
         </div>
       </div><!-- End About Section -->
-  
+
+      <!-- ======= Services Section ======= -->
+    <div id="services" class="services-area area-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="section-headline services-head text-center">
+              <h2>Specialised</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row text-center">
+          <!-- Start Left services -->
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="about-move">
+              <div class="services-details">
+                <div class="single-services">
+                  <a class="services-icon" href="https://leverageedu.com/blog/best-engineering-courses-for-future/">
+                    <i class="bi bi-briefcase"></i>
+                    <h4>Engineering</h4> 
+                  </a>
+                  <p>Engineering is one of the most opted degree courses after class 12th. With its roots widely spread in the majority of domains like Civil, Computer Science</p>
+                </div>
+              </div>
+              <!-- end about-details -->
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="about-move">
+              <div class="services-details">
+                <div class="single-services">
+                  <a class="services-icon" href="https://www.betterup.com/blog/career-growth#:~:text=Career%20growth%20opportunities%20at%20your,all%20aspects%20of%20your%20life.">
+                    <i class="bi bi-card-checklist"></i>
+                    <h4> Job opportunity</h4>
+                  </a>
+                  <p>
+                    Opportunity is that gateway to success, which will require ones skill and ability to discover, perceive and pursue to its logical end
+                  </p>
+                </div>
+              </div>
+              <!-- end about-details -->
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <!-- end col-md-4 -->
+            <div class=" about-move">
+              <div class="services-details">
+                <div class="single-services">
+                  <a class="services-icon" href="https://www.britannica.com/technology/automation/Development-of-robotics">
+                    <i class="bi bi-bar-chart"></i>
+                    <h4>Robot development system</h4>
+                  </a>
+                  <p>
+                    Robotics is based on two related technologies: numerical control and teleoperators.
+                  </p>
+                </div>
+              </div>
+              <!-- end about-details -->
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <!-- end col-md-4 -->
+        </div>
+      </div>
+    </div><!-- End Services Section -->
+      {% endblock %}
