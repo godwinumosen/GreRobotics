@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Login {% endblock %}
+{% block content %}
+
+<main id="main">
+  <!-- ======= Blog Section ======= -->
+  <div id="blog" class="blog-area">
+   <div class="blog-inner area-padding">
+     <div class="blog-overly"></div>
+     <div class="container ">
+       <div class="row">
+         <div class="col-md-12 col-sm-12 col-xs-12">
+           <div class="section-headline text-center">
+             <h4>Login</h4>
+           </div>
+         </div>
+       </div>
+
+       <div class="form-group">
+          <form method= "POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-secondary">Login</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  {% endblock %}

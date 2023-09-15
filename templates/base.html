@@ -38,14 +38,20 @@
           <li><a class="nav-link scrollto active" href="{% url 'home' %}">Home</a></li>
           <li><a class="nav-link scrollto" href="{% url 'about' %}">About</a></li>
           <li><a class="nav-link scrollto" href="{% url 'contact' %}">Contact</a></li>
-          <li><a class="nav-link scrollto" href="{% url 'add_post' %}">Add Post</a></li>
+
+          {% if user.is_authenticated %}
+          <li><a class="nav-link scrollto" href="{% url 'add_post' %}">Knowledge Post</a></li>
+          <li><a href="{% url 'logout' %}">Logout</a></li>
+
+          {% else %}
           <li class="dropdown"><a href="#"><span>Register</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">Sign Up</a></li>
-              <li><a href="#">Login</a></li>
-              <li><a href="#">Logout</a></li>
+              <li><a href="{% url 'register' %}">Register</a></li>
+              <li><a href="{% url 'login' %}">Login</a></li>
             </ul>
           </li>
+          {% endif %}    
+         
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- navbar -->
@@ -72,7 +78,7 @@
                   <h2><a class="nav-link scrollto active" href="{% url 'home' %}"><span>Gre</span>Robotics</h2>
                 </div>
 
-                <p>🤖Our robots are designed to be efficient, effective, and user-friendly.🌎 With our robots, the possibilities are endless - the only limit is your imagination! 💡</p>
+                <p>Our robots 🤖 are designed to be efficient, effective, and user-friendly.🌎 With our robots, the possibilities are endless - the only limit is your imagination! 💡</p>
                 <div class="footer-icons">
                   <ul>
                     <li>

@@ -5,98 +5,121 @@
 {% block content %}
 
 <!-- ======= Specialized ======= -->
-<div id="services" class="services-area area-padding">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <div class="section-headline services-head text-center">
-          <h2>Specialized</h2>
+{% if user.is_authenticated %}
+
+  <div id="services" class="services-area area-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="section-headline services-head text-center">
+            <h2>Specialized</h2>
+          </div>
         </div>
+      </div>
+      <div class="row text-center">
+        <!-- Start Left services -->
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="about-move">
+            <div class="services-details">
+              <div class="single-services">
+                <a class="services-icon" href="https://leverageedu.com/blog/best-engineering-courses-for-future/">
+                  <i class="bi bi-briefcase"></i>
+                  <h4>Engineering</h4> 
+                </a>
+                <p>Engineering is one of the most opted degree courses after class 12th. With its roots widely spread in the majority of domains like Civil, Computer Science</p>
+              </div>
+            </div>
+            <!-- end about-details -->
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="about-move">
+            <div class="services-details">
+              <div class="single-services">
+                <a class="services-icon" href="https://www.betterup.com/blog/career-growth#:~:text=Career%20growth%20opportunities%20at%20your,all%20aspects%20of%20your%20life.">
+                  <i class="bi bi-card-checklist"></i>
+                  <h4> Job opportunity</h4>
+                </a>
+                <p>
+                  Opportunity is that gateway to success, which will require ones skill and ability to discover, perceive and pursue to its logical end
+                </p>
+              </div>
+            </div>
+            <!-- end about-details -->
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <!-- end col-md-4 -->
+          <div class=" about-move">
+            <div class="services-details">
+              <div class="single-services">
+                <a class="services-icon" href="https://www.britannica.com/technology/automation/Development-of-robotics">
+                  <i class="bi bi-bar-chart"></i>
+                  <h4>Robot development system</h4>
+                </a>
+                <p>
+                  Robotics is based on two related technologies: numerical control and teleoperators.
+                </p>
+              </div>
+            </div>
+            <!-- end about-details -->
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <!-- end col-md-4 -->
       </div>
     </div>
-    <div class="row text-center">
-      <!-- Start Left services -->
-      <div class="col-md-4 col-sm-4 col-xs-12">
-        <div class="about-move">
-          <div class="services-details">
-            <div class="single-services">
-              <a class="services-icon" href="https://leverageedu.com/blog/best-engineering-courses-for-future/">
-                <i class="bi bi-briefcase"></i>
-                <h4>Engineering</h4> 
-              </a>
-              <p>Engineering is one of the most opted degree courses after class 12th. With its roots widely spread in the majority of domains like Civil, Computer Science</p>
+  </div><!-- End Services Section -->
+
+
+
+  <main id="main">
+    <!-- ======= Blog Section ======= -->
+    <div id="blog" class="blog-area">
+    <div class="blog-inner area-padding">
+      <div class="blog-overly"></div>
+      <div class="container ">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="section-headline text-center">
+              <h4>Add Post</h4>
             </div>
           </div>
-          <!-- end about-details -->
         </div>
-      </div>
-      <div class="col-md-4 col-sm-4 col-xs-12">
-        <div class="about-move">
-          <div class="services-details">
-            <div class="single-services">
-              <a class="services-icon" href="https://www.betterup.com/blog/career-growth#:~:text=Career%20growth%20opportunities%20at%20your,all%20aspects%20of%20your%20life.">
-                <i class="bi bi-card-checklist"></i>
-                <h4> Job opportunity</h4>
-              </a>
-              <p>
-                Opportunity is that gateway to success, which will require ones skill and ability to discover, perceive and pursue to its logical end
-              </p>
-            </div>
+
+        <div class="form-group">
+            <form method= "POST">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button class="btn btn-secondary"> Post </button>
           </div>
-          <!-- end about-details -->
         </div>
       </div>
-      <div class="col-md-4 col-sm-4 col-xs-12">
-        <!-- end col-md-4 -->
-        <div class=" about-move">
-          <div class="services-details">
-            <div class="single-services">
-              <a class="services-icon" href="https://www.britannica.com/technology/automation/Development-of-robotics">
-                <i class="bi bi-bar-chart"></i>
-                <h4>Robot development system</h4>
-              </a>
-              <p>
-                Robotics is based on two related technologies: numerical control and teleoperators.
-              </p>
-            </div>
-          </div>
-          <!-- end about-details -->
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-4 col-xs-12">
-        <!-- end col-md-4 -->
     </div>
   </div>
-</div><!-- End Services Section -->
 
+  {% else %}
 
-
-<main id="main">
-  <!-- ======= Blog Section ======= -->
-  <div id="blog" class="blog-area">
-   <div class="blog-inner area-padding">
-     <div class="blog-overly"></div>
-     <div class="container ">
-       <div class="row">
-         <div class="col-md-12 col-sm-12 col-xs-12">
-           <div class="section-headline text-center">
-             <h4>Add Post</h4>
+  <main id="main">
+    <!-- ======= Blog Section ======= -->
+    <div id="blog" class="blog-area">
+     <div class="blog-inner area-padding">
+       <div class="blog-overly"></div>
+       <div class="container ">
+         <div class="row">
+           <div class="col-md-12 col-sm-12 col-xs-12">
+             <div class="section-headline text-center">
+              <h4><b>You're not allow here! (and you know it Chief...)</b></h4>
+             </div>
            </div>
          </div>
-       </div>
-
-       <div class="form-group">
-          <form method= "POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button class="btn btn-secondary"> Post </button>
+  
+        
         </div>
       </div>
     </div>
   </div>
-</div>
-
-
-   
-      
+  
+  {% endif %}
+          
   {% endblock %}

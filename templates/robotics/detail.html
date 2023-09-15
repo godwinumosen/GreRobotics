@@ -36,8 +36,12 @@
             </div>
             <span>
               <a href="{% url 'home' %}" class="btn btn-secondary"><i class="fa fa-angle-left">Back</i></a> <small>Posted: </small> {{ object.publish_date }}
+              
+              {% if user.is_authenticated %}
               <a href="{% url 'update_post' object.pk %} "> Edit</a>
-              <a href="{% url 'delete_post' object.pk %} ">, Delete</a>
+              <a href="{% url 'delete_post' object.pk %} "> Delete</a>
+              {% endif %}
+
             </span>
           </div>
         </div>
