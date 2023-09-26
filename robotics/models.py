@@ -4,9 +4,9 @@ from django.urls import reverse
 from datetime import datetime, date
 # Create your models here.
 class Category (models.Model):
+    
     name = models.CharField (max_length=500)
-    
-    
+        
     def __str__(self):
         return self.name + ' | ' + str(self.author)
     
