@@ -3,12 +3,11 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from datetime import datetime, date
 # Create your models here.
-class Category (models.Model):
-    
+class Category (models.Model): 
     name = models.CharField (max_length=500)
         
     def __str__(self):
-        return self.name + ' | ' + str(self.author)
+        return self.name 
     
     def get_absolute_url(self):
         return reverse ('detail', args=(str(self.id)))
