@@ -1,12 +1,10 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import GreRoboticsModel
+from .models import GreRoboticsModel, Category
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import GreRoboticsForms, EditGreRoboticsForms
 from django.urls import reverse_lazy
-# Create your views here.
-
 
 #def index (request) :
  #   return render (request, 'robotics/index.html',{})
@@ -18,6 +16,9 @@ class HomeListView (ListView) :
     model = GreRoboticsModel
     template_name = 'robotics/index.html'
     ordering =['-publish_date']
+
+def CategoryView (request, cats):
+    return render (request, 'robotics/categories.html', {})
 
 class ArticleDetailView (DetailView):
     model = GreRoboticsModel
@@ -32,6 +33,12 @@ class AddPostView (CreateView):
     form_class = GreRoboticsForms
     template_name = 'robotics/add_post.html'  
     #fields = ('title', 'content', 'slug', 'author',)
+    
+class AddCategoryView (CreateView):
+    model = Category
+    #form_class = GreRoboticsForms
+    template_name = 'robotics/add_category.html'  
+    fields = '__all__'
     
 class UpdatePostView (UpdateView):
     model = GreRoboticsModel
@@ -62,5 +69,4 @@ def contact (request):
         return render(request, 'robotics/contact.html',context)
     
 def about (request):
-    
     return render (request, 'robotics/about.html',{})

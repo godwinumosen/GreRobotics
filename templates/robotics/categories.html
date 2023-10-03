@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<main id="main">
+    <!-- ======= Blog Section ======= -->
+    <div id="blog" class="blog-area">
+     <div class="blog-inner area-padding">
+       <div class="blog-overly"></div>
+       <div class="container ">
+         <div class="row">
+           <div class="col-md-12 col-sm-12 col-xs-12">
+             <div class="section-headline text-center">   
+               <h2>Categories</h2>
+             </div>
+           </div>
+         </div>
+
+         <div class="row">
+           {% for post in object_list %}
+           <div class="col-md-4 col-sm-4 col-xs-12">
+             <div class="single-blog">
+               <div class="single-blog-img">
+                 <a href="{% url 'detail' post.pk %}">
+                   {% if post.img %}
+                   <img src="{{ post.img.url }}" alt="">
+                   {% endif %}  
+                 </a>
+               </div>
+               <div class="blog-text">
+                 <h4>
+                   <a href="{% url 'detail' post.pk %}">{{ post.title }}</a>
+                 </h4>
+                 <p>{{ post.content|truncatechars:200 }}</p>
+               </div> 
+               <span><a href="{% url 'detail' post.pk %}" class="ready-btn">Read more <i class="fa fa-angle-right"></i></a></span>
+             </div>
+           </div>
+           {% endfor %}
+         </div>
+       </div>
+     </div>
+   </div>
+   {% endblock %}

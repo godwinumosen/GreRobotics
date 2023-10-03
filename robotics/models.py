@@ -10,7 +10,7 @@ class Category (models.Model):
         return self.name 
     
     def get_absolute_url(self):
-        return reverse ('detail', args=(str(self.id)))
+        return reverse ('home')
     
     @property
     def image_url(self):
@@ -24,7 +24,7 @@ class GreRoboticsModel (models.Model):
     img = models.ImageField ( upload_to= 'image/')
     publish_date = models.DateTimeField (auto_now_add= True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    category = models.CharField (max_length=250, default='coding')
+    category = models.CharField (max_length=255, default='coding')
     
     class Meta:
         ordering =['-publish_date']
@@ -33,7 +33,7 @@ class GreRoboticsModel (models.Model):
         return self.title + ' | ' + str(self.author)
     
     def get_absolute_url(self):
-        return reverse ('detail', args=(str(self.id)))
+        return reverse ('home') #args=(str(self.id)))
     
     @property
     def image_url(self):
