@@ -7,6 +7,7 @@ choices = Category.objects.all().values_list('name','name')
 choice_list = []
 for items in choices:
     choice_list.append(items)
+
 class GreRoboticsForms (forms.ModelForm):
     class Meta :
         model = GreRoboticsModel

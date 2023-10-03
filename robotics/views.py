@@ -18,7 +18,8 @@ class HomeListView (ListView) :
     ordering =['-publish_date']
 
 def CategoryView (request, cats):
-    return render (request, 'robotics/categories.html', {})
+    category_posts = Category.objects.filter(category=cats)
+    return render (request, 'robotics/categories.html', {'cats':cats,'category_posts':category_posts})
 
 class ArticleDetailView (DetailView):
     model = GreRoboticsModel
