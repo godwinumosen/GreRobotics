@@ -86,4 +86,4 @@ def whatsapp_message(request):
     whatsapp_number = '+2348071719075'
     whatsapp_link = f'https://api.whatsapp.com/send?phone={whatsapp_number}'
     context = {'whatsapp_link': whatsapp_link}
-    return render(request, 'whatsapp_message.html', context)
+    return render(request, 'whatsapp_message.html' context)
