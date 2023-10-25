@@ -11,7 +11,7 @@ for items in choices:
 class GreRoboticsForms (forms.ModelForm):
     class Meta :
         model = GreRoboticsModel
-        fields = ('title', 'slug', 'author','category','content',)
+        fields = ('title', 'slug', 'author','category','content')
         
         widgets = {
             'title' : forms.TextInput (attrs={'class':'form-control',}),
