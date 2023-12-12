@@ -33,7 +33,7 @@ class ArticleDetailView (DetailView):
         return render(request, 'detail.html', {'detail': object})
 
 #The AddPostView    
-class AddPostView (CreateView):
+class AddPostView (CreateView)
     model = GreRoboticsModel
     form_class = GreRoboticsForms
     template_name = 'robotics/add_post.html'  
