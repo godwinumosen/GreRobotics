@@ -35,7 +35,7 @@ class ArticleDetailView (DetailView):
 #The AddPostView    
 class AddPostView (CreateView):
     model = GreRoboticsModel
-    form_class = GreRoboticsForm
+    form_class = GreRoboticsForms
     template_name = 'robotics/add_post.html'  
     #fields = ('title', 'content', 'slug', 'author',)
 
