@@ -29,7 +29,7 @@ class ArticleDetailView (DetailView):
     template_name = 'robotics/detail.html'
     
     def ArticleDetailView(request, pk):  
-        object = get_object_or_404(GreRoboticsModel, p=pk)
+        object = get_object_or_404(GreRoboticsModel, pk=pk)
         return render(request, 'detail.html', {'detail': object})
 
 #The AddPostView    
